@@ -1,10 +1,10 @@
 # gocuc
-material for the workshop of cucosta 2023 (golang)
+material para un taller de go en cucosta 2023 (golang)
 
 ### Requirements
 - go compiler (download from https://go.dev/dl/)
 
 ### Topics
-- concurrency patterns
-- synchronization
-- troubleshooting 
+- Patrones de concurrencia
+- Entendiendo la sincronizacion
+- Resolviendo problemas comunes
