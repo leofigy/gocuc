@@ -8,3 +8,6 @@ material para un taller de go en cucosta 2023 (golang)
 - Patrones de concurrencia
 - Entendiendo la sincronizacion
 - Resolviendo problemas comunes
+
+#### Patrones de concurrencia [here](docs/concurrency.md)
+
