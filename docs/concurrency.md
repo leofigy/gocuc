@@ -43,11 +43,11 @@ Los hilos son administrados por el kernel por lo tanto se necesita hacer un syst
 para obtener acceso, sin embargo es costoso estar creando y regresando el control de los hilos al scheduler del sistema operativo, la relacion es 1:1 con respecto a la aplicacion. El beneficio a pesar del costo, como el kernel tiene contexto de los threads, tiene mecanismos para evitar los puntos muertos (deadlock)
 
 ```
-User Level Thread model   (modelo de hilo a nivel de usuario  M:1)
+User Level Thread model   (modelo de hilo a nivel de usuario  N:1)
 ```
 Los hilos a nivel de usuario tienen una relacion de N:1, es decir varios hilos simulados del lado de la aplicacion se terminan ejecutando en un solo hilo del kernel, esto permite tener concurrencia, son mas baratos para crear, sin embargo el kernel no tiene contexto de cuales hilos pueden estar bloqueados del lado del usuario (aplicacion).
 ```
-Hybrid Thread model       (modelo de hilo hibrido M:N)
+Hybrid Thread model       (modelo de hilo hibrido N:M)
 ```
 El modelo hibrido consiste en usar los dos tipos de threads desde la aplicacion, desde el lado de la aplicacion se crean los hilos de usuario, ademas que se proveen mecanismos de sincronizacion para evitar los puntos muertos. 
 ```
@@ -76,5 +76,13 @@ func main(){
 ```
 El codigo anterior lanza 100 go-routines , despues en la funcion main que corre en su propia rutina, 
 imprime el numero total de go-routines existentes
+
+#### Ahora la pregunta, que hace el scheduler cada vez que creamos una go-routina 1-to-1, N-to-1 o M-to-N (user/kernel threads)?
+
+Pues depende, puede usar cualquiera de las 3 estrategias. GPM significa:
+- G: goroutine (rutina de go)
+- M: Machine   (maquina, threads disponibles en el sistema , kernel threads, el numero maximo es 10,000)
+- P: Processor (es una cola de go-routines esperando a ser distribuidas en cada kernel thread)
+
 
 

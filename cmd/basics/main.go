@@ -13,4 +13,5 @@ func main() {
 		}()
 	}
 	fmt.Println(runtime.NumGoroutine())
+	fmt.Println(runtime.NumCPU()) // P = 8
 }
