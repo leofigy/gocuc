@@ -77,7 +77,7 @@ func main(){
 El codigo anterior lanza 100 go-routines , despues en la funcion main que corre en su propia rutina, 
 imprime el numero total de go-routines existentes
 
-#### Ahora la pregunta, que hace el scheduler cada vez que creamos una go-routina 1-to-1, N-to-1 o M-to-N (user/kernel threads)?
+#### Ahora la pregunta, que hace el scheduler cada vez que creamos una go-routina 1-to-1, N-to-1 o N-to-M (user/kernel threads)?
 
 Pues depende, puede usar cualquiera de las 3 estrategias. GPM significa:
 - G: goroutine (rutina de go)
