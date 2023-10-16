@@ -1,8 +1,10 @@
 # gocuc
 material para un taller de go en cucosta 2023 (golang)
 
-### Requirements
-- go compiler (download from https://go.dev/dl/)
+### requisitos
+Instalar golang
+- Disponible en @ https://go.dev/doc/install
+- Un editor, como vscode https://code.visualstudio.com/download
 
 ### Topics
 - Patrones de concurrencia
