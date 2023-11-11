@@ -12,6 +12,6 @@ func main() {
 			time.Sleep(time.Second)
 		}()
 	}
-	fmt.Println(runtime.NumGoroutine())
-	fmt.Println(runtime.NumCPU()) // P = 8
+	fmt.Println("go-routine", runtime.NumGoroutine())
+	fmt.Println("processors", runtime.NumCPU()) // P = 8
 }
