@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"net"
 	"net/http"
@@ -34,5 +35,14 @@ func main() {
 			continue
 		}
 		log.Println(resp)
+
+		data, err := io.ReadAll(resp.Request.Response.Body)
+
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+
+		fmt.Println(data)
 	}
 }
